@@ -1,76 +1,102 @@
-includeBuild('../obp2-utils') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-utils') with project(':')
+if (file('../obp2-utils').exists()) {
+	includeBuild('../obp2-utils') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-utils') with project(':')
+		}
 	}
 }
-
-includeBuild ('../obp2-core') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-execution') with project(':obp2-execution')
-		substitute module('fr.ensta-bretagne:obp2-algorithms') with project(':obp2-algorithms')
-		substitute module('fr.ensta-bretagne:obp2-folding') with project(':obp2-folding')
-		substitute module('fr.ensta-bretagne:obp2-kernel') with project(':obp2-kernel')
-		substitute module('fr.ensta-bretagne:obp2-runtime') with project(':obp2-runtime')
-		substitute module('fr.ensta-bretagne:obp2-visualisation') with project(':obp2-visualisation')
+if (file('../obp2-core').exists()) {
+	includeBuild('../obp2-core') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-execution') with project(':obp2-execution')
+			substitute module('fr.ensta-bretagne:obp2-algorithms') with project(':obp2-algorithms')
+			substitute module('fr.ensta-bretagne:obp2-folding') with project(':obp2-folding')
+			substitute module('fr.ensta-bretagne:obp2-kernel') with project(':obp2-kernel')
+			substitute module('fr.ensta-bretagne:obp2-runtime') with project(':obp2-runtime')
+			substitute module('fr.ensta-bretagne:obp2-visualisation') with project(':obp2-visualisation')
+		}
 	}
 }
 // OBP2 USER Interface
-includeBuild('../obp2-utils-fx') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-utils-fx') with project(':')
+if (file('../obp2-utils-fx').exists()) {
+	includeBuild('../obp2-utils-fx') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-utils-fx') with project(':')
+		}
 	}
 }
 
-includeBuild ('../obp2-core-ui') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-CLI') with project(':obp2-CLI')
-		substitute module('fr.ensta-bretagne:obp2-GUI') with project(':obp2-GUI')
-		substitute module('fr.ensta-bretagne:obp2-remote-CLI') with project(':obp2-remote-CLI')
+if (file('../obp2-core-ui').exists()) {
+	includeBuild('../obp2-core-ui') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-CLI') with project(':obp2-CLI')
+			substitute module('fr.ensta-bretagne:obp2-GUI') with project(':obp2-GUI')
+			substitute module('fr.ensta-bretagne:obp2-remote-CLI') with project(':obp2-remote-CLI')
+		}
 	}
 }
 // GPSL PROPERTY LANGUAGE
-includeBuild('../jicpl') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:LTL') with project(':LTL')
+if (file('../jicpl').exists()) {
+	includeBuild('../jicpl') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:LTL') with project(':LTL')
+		}
 	}
 }
 
-includeBuild('../obp2-runtime-buchi') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-runtime-buchi') with project(':')
+if (file('../obp2-runtime-buchi').exists()) {
+	includeBuild('../obp2-runtime-buchi') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-buchi') with project(':')
+		}
 	}
 }
 
-includeBuild('../obp2-runtime-buchikripke') {
-	dependencySubstitution {
-		substitute module ('fr.ensta-bretagne:obp2-runtime-buchikripke') with project(':')
+if (file('../obp2-runtime-buchikripke').exists()) {
+	includeBuild('../obp2-runtime-buchikripke') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-buchikripke') with project(':')
+		}
 	}
 }
 
 // Different languages supported
-includeBuild('../obp2-runtime-remote') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-runtime-remote') with project(':')
+if (file('../obp2-runtime-remote').exists()) {
+	includeBuild('../obp2-runtime-remote') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-remote') with project(':')
+		}
 	}
 }
 
-includeBuild('../obp2-runtime-tlaplus') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-runtime-tlaplus') with project(':')
+if (file('../obp2-runtime-tlaplus').exists()) {
+	includeBuild('../obp2-runtime-tlaplus') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-tlaplus') with project(':')
+		}
 	}
 }
 
-includeBuild('../obp2-runtime-lexplicit') {
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-runtime-lexplicit') with project(':')
-	}
-}
-includeBuild('../obp2-runtime-lstate_event'){
-	dependencySubstitution {
-		substitute module('fr.ensta-bretagne:obp2-runtime-lstate_event') with project(':')
+if (file('../obp2-runtime-lexplicit').exists()) {
+	includeBuild('../obp2-runtime-lexplicit') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-lexplicit') with project(':')
+		}
 	}
 }
 
-includeBuild ('../obp2-remote-java')
+if (file('../obp2-runtime-lstate_event').exists()) {
+	includeBuild('../obp2-runtime-lstate_event') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-lstate_event') with project(':')
+		}
+	}
+}
 
-includeBuild('../obp2-packaging')
+if (file('../obp2-remote-java').exists()) {
+	includeBuild('../obp2-remote-java')
+}
+
+if (file('../obp2-packaging').exists()) {
+	includeBuild('../obp2-packaging')
+}
