@@ -2,7 +2,7 @@
 # Java IDE
 Download and install IntelliJ IDEA community edition at: https://www.jetbrains.com/idea/download
 
-#A local development directory
+# A local development directory
 
 Create a local development directory. In the following I assume a directory named **obp2-project**.
 
@@ -10,7 +10,7 @@ Create a local development directory. In the following I assume a directory name
    mkdir obp2-project
 ```
 
-#Some properties for gradle
+# Some properties for gradle
 If you already have the file **~/.gradle/gradle.properties** in your home directory, append the following lines to it.
 
 ```properties
@@ -24,7 +24,7 @@ Alternativelly, you can copy the gradle.properties file in the ~/.gradle/ direct
 cp obp2-devel/gradle.properties ~/.gradle/gradle.properties
 ```
 
-#Repository Clones
+# Repository Clones
 
 - Clone the root project **obp2-devel** which imports the available modules
 
@@ -47,7 +47,7 @@ git clone -b v1.0 git@bitbucket.org:plug-team/plug-core-ui.git obp2-core-ui
 git clone -b v1.0 git@github.com:plug-obp/plug-runtime-remote.git obp2-runtime-remote
 ```
 
-#Open gradle project in IntelliJ IDEA 
+# Open gradle project in IntelliJ IDEA 
 Select **Open** in the Projects tab of the IntelliJ welcome screen. Or alternatively **File>>Open**
 ![img.png](img.png)
 
