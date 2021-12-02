@@ -10,6 +10,29 @@ Create a local development directory. In the following I assume a directory name
    mkdir obp2-project
 ```
 
+# Repository Clones
+
+- Clone the root project **obp2-devel** which imports the available modules
+
+```console
+git clone git@github.com:plug-obp/obp2-devel.git
+``` 
+
+- Clone the branch v1.0 of **obp2-core** which contains the core interfaces & verification algorithms
+```console
+git clone -b v1.0 git@bitbucket.org:plug-team/plug-core.git obp2-core
+```
+
+- Clone the branch v1.0 of **obp2-core-ui** which contains the command-line and graphical interfaces
+```console
+git clone -b v1.0 git@bitbucket.org:plug-team/plug-core-ui.git obp2-core-ui
+```
+
+- Clone the branch v1.0 of **obp2-runtime-remote**, which contains the implementation of the socket connection to a *client language server* (i.e. Python)
+```console
+git clone -b v1.0 git@github.com:plug-obp/plug-runtime-remote.git obp2-runtime-remote
+```
+
 # Some properties for gradle
 If you already have the file **~/.gradle/gradle.properties** in your home directory, append the following lines to it.
 
@@ -22,29 +45,6 @@ Alternativelly, you can copy the gradle.properties file in the ~/.gradle/ direct
 
 ```console
 cp obp2-devel/gradle.properties ~/.gradle/gradle.properties
-```
-
-# Repository Clones
-
-- Clone the root project **obp2-devel** which imports the available modules
-
-```console
-git clone git@github.com:plug-obp/obp2-devel.git
-``` 
-
-- Clone **obp2-core** which contains the core interfaces & verification algorithms
-```console
-git clone -b v1.0 git@bitbucket.org:plug-team/plug-core.git obp2-core
-```
-
-- Clone **obp2-core-ui** which contains the command-line and graphical interfaces
-```console
-git clone -b v1.0 git@bitbucket.org:plug-team/plug-core-ui.git obp2-core-ui
-```
-
-- Clone **obp2-runtime-remote**, which contains the implementation of the socket connection to a *client language server* (i.e. Python)
-```console
-git clone -b v1.0 git@github.com:plug-obp/plug-runtime-remote.git obp2-runtime-remote
 ```
 
 # Open gradle project in IntelliJ IDEA 
