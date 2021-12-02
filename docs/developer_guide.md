@@ -66,3 +66,32 @@ On the right-hand side of the IntelliJ window you have a *Gradle* tab.
 Click on it, and select **Reload All Gradle Projects** button. This will import the obp2 packages in IntelliJ.
 
 ![img_4.png](img_4.png)
+
+Open **Gradle Settings** 
+
+![img_7.png](img_7.png)
+
+Select IntelliJ IDEA from the combobox for **Build and run using** and **Run tests using**.
+Click OK.
+
+![img_6.png](img_6.png)
+
+Build the project.
+
+![img_8.png](img_8.png)
+
+To run the generic command-line version, right-click on **obp2-core-ui/obp2-CLI/src/obp2.cli/PlugCLI** and select *Run*.
+For debugging you can select *Debug* button.
+
+![img_5.png](img_5.png)
+
+To run the command-line version with the --language-server option, right-click on 
+**obp2-core-ui/obp2-remote-CLI/src/obp2.cli/PlugRemoteCLI** and select *Run*.
+For debugging you can select *Debug* button.
+
+![img_9.png](img_9.png)
+
+To run the Graphical User Interface, right-click on **obp2-core-ui/obp2-GUI/src/obp2/ui2/PlugUI** and select *Run*.
+For debugging you can select *Debug* button.
+
+![img_10.png](img_10.png)
