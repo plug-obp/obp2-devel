@@ -1,0 +1,5 @@
+
+
+tasks.register('build') {
+    dependsOn gradle.includedBuilds*.task(':build')
+}
