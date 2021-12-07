@@ -118,3 +118,10 @@ if (file('../obp2-timed-semantics').exists()) {
 	}
 }
 
+if (file('../obp2-pastfreeze').exists()) {
+	includeBuild('../obp2-pastfreeze') {
+//		dependencySubstitution {
+//			substitute module('fr.ensta-bretagne:obp2-pastfreeze') with project(':obp2-pastfreeze')
+//		}
+	}
+}
