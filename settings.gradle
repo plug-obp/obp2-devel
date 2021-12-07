@@ -141,7 +141,7 @@ if (file('../obp2-obp-bridge').exists()) {
 		dependencySubstitution {
 			substitute module('fr.ensta-bretagne:obp2-runtime-fiacre') with project(':obp2-runtime-fiacre')
 //			substitute module('fr.ensta-bretagne:obp2-runtime-cdl') with project(':obp2-runtime-cdl')
-			substitute module('fr.ensta-bretagne:obp2-runtime-postmortem-obp') with project(':obp2-runtime-postmortem-obp')
+//			substitute module('fr.ensta-bretagne:obp2-runtime-postmortem-obp') with project(':obp2-runtime-postmortem-obp')
 		}
 	}
 }
