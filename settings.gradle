@@ -39,7 +39,9 @@ if (file('../obp2-core-ui').exists()) {
 if (file('../jicpl').exists()) {
 	includeBuild('../jicpl') {
 		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:LPropositionalLogic') with project(':LPropositionalLogic')
 			substitute module('fr.ensta-bretagne:LTL') with project(':LTL')
+			substitute module('fr.ensta-bretagne:BuchiAutomata') with project(':BuchiAutomata')
 		}
 	}
 }
@@ -133,3 +135,13 @@ if (file('../obp2-synchronization').exists()) {
 		}
 	}
 }
+
+//if (file('../obp2-obp-bridge').exists()) {
+//	includeBuild('../obp2-obp-bridge') {
+//		dependencySubstitution {
+//			substitute module('fr.ensta-bretagne:obp2-runtime-fiacre') with project(':obp2-runtime-fiacre')
+////			substitute module('fr.ensta-bretagne:obp2-runtime-cdl') with project(':obp2-runtime-cdl')
+//			substitute module('fr.ensta-bretagne:obp2-runtime-postmortem-obp') with project(':obp2-runtime-postmortem-obp')
+//		}
+//	}
+//}
