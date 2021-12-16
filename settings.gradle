@@ -145,3 +145,11 @@ if (file('../obp2-obp-bridge').exists()) {
 		}
 	}
 }
+
+if (file('../obp2-hash').exists()) {
+	includeBuild('../obp2-hash') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-hash') with project(':')
+		}
+	}
+}
