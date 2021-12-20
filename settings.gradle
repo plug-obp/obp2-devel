@@ -153,3 +153,11 @@ if (file('../obp2-hash').exists()) {
 		}
 	}
 }
+
+if (file('../obp2-divine-bridge').exists()) {
+	includeBuild('../obp2-divine-bridge') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-divine-bridge') with project(':')
+		}
+	}
+}
