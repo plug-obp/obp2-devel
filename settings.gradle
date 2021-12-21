@@ -14,6 +14,7 @@ if (file('../obp2-core').exists()) {
 			substitute module('fr.ensta-bretagne:obp2-kernel') with project(':obp2-kernel')
 			substitute module('fr.ensta-bretagne:obp2-runtime') with project(':obp2-runtime')
 			substitute module('fr.ensta-bretagne:obp2-visualisation') with project(':obp2-visualisation')
+			substitute module('fr.ensta-bretagne:obp2-bytearray') with project(':obp2-bytearray')
 		}
 	}
 }
