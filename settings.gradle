@@ -162,3 +162,11 @@ if (file('../obp2-divine-bridge').exists()) {
 		}
 	}
 }
+
+if (file('../obp2-java-inspector').exists()) {
+	includeBuild('../obp2-java-inspector') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-java-inspector') with project(':')
+		}
+	}
+}
