@@ -112,14 +112,14 @@ if (file('../obp2-bpmn2-semantics').exists()) {
 	}
 }
 
-if (file('../obp2-timed-semantics').exists()) {
-	includeBuild('../obp2-timed-semantics'){
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-ltimed') with project(':obp2-runtime-ltimed')
-			substitute module('fr.ensta-bretagne:obp2-timed-bpmn2') with project(':obp2-timed-bpmn2')
-		}
-	}
-}
+//if (file('../obp2-timed-semantics').exists()) {
+//	includeBuild('../obp2-timed-semantics'){
+//		dependencySubstitution {
+//			substitute module('fr.ensta-bretagne:obp2-runtime-ltimed') with project(':obp2-runtime-ltimed')
+//			substitute module('fr.ensta-bretagne:obp2-timed-bpmn2') with project(':obp2-timed-bpmn2')
+//		}
+//	}
+//}
 
 if (file('../obp2-pastfreeze').exists()) {
 	includeBuild('../obp2-pastfreeze') {
