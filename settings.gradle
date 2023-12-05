@@ -170,3 +170,19 @@ if (file('../obp2-java-inspector').exists()) {
 		}
 	}
 }
+
+if (file('../obp2-runtime-lstring').exists()) {
+	includeBuild('../obp2-runtime-lstring') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-lstring') with project(':')
+		}
+	}
+}
+
+if (file('../obp2-runtime-lregexp').exists()) {
+	includeBuild('../obp2-runtime-lregexp') {
+		dependencySubstitution {
+			substitute module('fr.ensta-bretagne:obp2-runtime-lregexp') with project(':')
+		}
+	}
+}
