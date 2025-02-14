@@ -1,188 +1,64 @@
-if (file('../obp2-utils').exists()) {
-	includeBuild('../obp2-utils') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-utils') with project(':')
+def includeBuildAndSubstituteDependencies(prefix,name) {
+	if (file("$prefix/$name").exists()) {
+		includeBuild("$prefix/$name") {
+			dependencySubstitution {
+				substitute module('fr.ensta-bretagne:$name') using project(':')
+			}
 		}
+	} else {
+		println("No file '../$prefix/$name'")
 	}
 }
-if (file('../obp2-core').exists()) {
-	includeBuild('../obp2-core') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-execution') with project(':obp2-execution')
-			substitute module('fr.ensta-bretagne:obp2-algorithms') with project(':obp2-algorithms')
-			substitute module('fr.ensta-bretagne:obp2-folding') with project(':obp2-folding')
-			substitute module('fr.ensta-bretagne:obp2-kernel') with project(':obp2-kernel')
-			substitute module('fr.ensta-bretagne:obp2-runtime') with project(':obp2-runtime')
-			substitute module('fr.ensta-bretagne:obp2-visualisation') with project(':obp2-visualisation')
-			substitute module('fr.ensta-bretagne:obp2-bytearray') with project(':obp2-bytearray')
-		}
-	}
-}
+
+includeBuildAndSubstituteDependencies('..'					, 'obp2-gradle-plugin'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-utils'			)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-runtime'		)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-kernel'			)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-bytearray'		)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-algorithms'		)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-folding'		)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-execution'		)
+includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-visualisation'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-hash'	)
+
 // OBP2 USER Interface
-if (file('../obp2-utils-fx').exists()) {
-	includeBuild('../obp2-utils-fx') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-utils-fx') with project(':')
-		}
-	}
-}
+includeBuildAndSubstituteDependencies('..'					, 'obp2-utils-fx'		)
+includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-CLI'		)
+includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-GUI'		)
+includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-remote-CLI'	)
 
-if (file('../obp2-core-ui').exists()) {
-	includeBuild('../obp2-core-ui') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-CLI') with project(':obp2-CLI')
-			substitute module('fr.ensta-bretagne:obp2-GUI') with project(':obp2-GUI')
-			substitute module('fr.ensta-bretagne:obp2-remote-CLI') with project(':obp2-remote-CLI')
-		}
-	}
-}
 // GPSL PROPERTY LANGUAGE
-if (file('../jicpl').exists()) {
-	includeBuild('../jicpl') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:LPropositionalLogic') with project(':LPropositionalLogic')
-			substitute module('fr.ensta-bretagne:LTL') with project(':LTL')
-			substitute module('fr.ensta-bretagne:BuchiAutomata') with project(':BuchiAutomata')
-		}
-	}
-}
+includeBuildAndSubstituteDependencies('../jicpl'			, 'LPropositionalLogic'		)
+includeBuildAndSubstituteDependencies('../jicpl'			, 'LTL'			)
+includeBuildAndSubstituteDependencies('../jicpl'			, 'BuchiAutomata'		)
 
-if (file('../obp2-runtime-buchi').exists()) {
-	includeBuild('../obp2-runtime-buchi') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-buchi') with project(':')
-		}
-	}
-}
+// OBP2 Buchi RUNTIME
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-buchi'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-buchikripke'	)
 
-if (file('../obp2-runtime-buchikripke').exists()) {
-	includeBuild('../obp2-runtime-buchikripke') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-buchikripke') with project(':')
-		}
-	}
-}
+// Remote language support
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-remote'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-tlaplus'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-lexplicit'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-lstate_event'	)
 
-// Different languages supported
-if (file('../obp2-runtime-remote').exists()) {
-	includeBuild('../obp2-runtime-remote') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-remote') with project(':')
-		}
-	}
-}
 
-if (file('../obp2-runtime-tlaplus').exists()) {
-	includeBuild('../obp2-runtime-tlaplus') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-tlaplus') with project(':')
-		}
-	}
-}
 
-if (file('../obp2-runtime-lexplicit').exists()) {
-	includeBuild('../obp2-runtime-lexplicit') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-lexplicit') with project(':')
-		}
-	}
-}
+includeBuildAndSubstituteDependencies('..'					, 'obp2-remote-java'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-pastfreeze'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-synchronization'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-lstring'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-runtime-lregexp'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-java-inspector'	)
+includeBuildAndSubstituteDependencies('..'					, 'obp2-divine-bridge'	)
 
-if (file('../obp2-runtime-lstate_event').exists()) {
-	includeBuild('../obp2-runtime-lstate_event') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-lstate_event') with project(':')
-		}
-	}
-}
+// Fiacre Language Support
+includeBuildAndSubstituteDependencies('../obp2-obp-bridge'	, 'obp2-runtime-fiacre'	)
 
-if (file('../obp2-remote-java').exists()) {
-	includeBuild('../obp2-remote-java')
-}
+//BPMN2 Semantics
+includeBuildAndSubstituteDependencies('..'					, 'obp2-bpmn2-semantics'	)
+includeBuildAndSubstituteDependencies('../obp2-timed-semantics', 'obp2-runtime-ltimed'	)
+includeBuildAndSubstituteDependencies('../obp2-timed-semantics', 'obp2-timed-bpmn2'	)
 
-if (file('../obp2-packaging').exists()) {
-	includeBuild('../obp2-packaging')
-}
-
-if (file('../obp2-bpmn2-semantics').exists()) {
-	includeBuild('../obp2-bpmn2-semantics'){
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-bpmn2-semantics') with project(':')
-		}
-	}
-}
-
-//if (file('../obp2-timed-semantics').exists()) {
-//	includeBuild('../obp2-timed-semantics'){
-//		dependencySubstitution {
-//			substitute module('fr.ensta-bretagne:obp2-runtime-ltimed') with project(':obp2-runtime-ltimed')
-//			substitute module('fr.ensta-bretagne:obp2-timed-bpmn2') with project(':obp2-timed-bpmn2')
-//		}
-//	}
-//}
-
-if (file('../obp2-pastfreeze').exists()) {
-	includeBuild('../obp2-pastfreeze') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-pastfreeze') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-synchronization').exists()) {
-	includeBuild('../obp2-synchronization') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-synchronization') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-obp-bridge').exists()) {
-	includeBuild('../obp2-obp-bridge') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-fiacre') with project(':obp2-runtime-fiacre')
-//			substitute module('fr.ensta-bretagne:obp2-runtime-cdl') with project(':obp2-runtime-cdl')
-//			substitute module('fr.ensta-bretagne:obp2-runtime-postmortem-obp') with project(':obp2-runtime-postmortem-obp')
-		}
-	}
-}
-
-if (file('../obp2-hash').exists()) {
-	includeBuild('../obp2-hash') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-hash') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-divine-bridge').exists()) {
-	includeBuild('../obp2-divine-bridge') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-divine-bridge') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-java-inspector').exists()) {
-	includeBuild('../obp2-java-inspector') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-java-inspector') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-runtime-lstring').exists()) {
-	includeBuild('../obp2-runtime-lstring') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-lstring') with project(':')
-		}
-	}
-}
-
-if (file('../obp2-runtime-lregexp').exists()) {
-	includeBuild('../obp2-runtime-lregexp') {
-		dependencySubstitution {
-			substitute module('fr.ensta-bretagne:obp2-runtime-lregexp') with project(':')
-		}
-	}
-}
+// OBP2 PACKAGING for distribution
+includeBuildAndSubstituteDependencies('..'					, 'obp2-packaging'	)

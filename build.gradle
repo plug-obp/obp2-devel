@@ -1,10 +1,14 @@
-
+version='1.1.0'
 
 tasks.register('assemble') {
     dependsOn gradle.includedBuilds*.task(':assemble')
 }
 tasks.register('build') {
     dependsOn gradle.includedBuilds*.task(':build')
+}
+
+tasks.register('test') {
+    dependsOn gradle.includedBuilds*.task(':clean')
 }
 
 tasks.register('clean') {
