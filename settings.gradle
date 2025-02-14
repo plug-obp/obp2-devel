@@ -10,7 +10,7 @@ def includeBuildAndSubstituteDependencies(prefix,name) {
 	}
 }
 
-includeBuildAndSubstituteDependencies('..'					, 'obp2-gradle-plugin'	)
+//includeBuildAndSubstituteDependencies('..'					, 'obp2-gradle-plugin'	)
 includeBuildAndSubstituteDependencies('..'					, 'obp2-utils'			)
 includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-runtime'		)
 includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-kernel'			)
@@ -22,10 +22,11 @@ includeBuildAndSubstituteDependencies('../obp2-core'		, 'obp2-visualisation'	)
 includeBuildAndSubstituteDependencies('..'					, 'obp2-hash'	)
 
 // OBP2 USER Interface
-includeBuildAndSubstituteDependencies('..'					, 'obp2-utils-fx'		)
-includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-CLI'		)
-includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-GUI'		)
-includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-remote-CLI'	)
+ includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-remote-CLI'	)
+ includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-CLI'		)
+// includeBuildAndSubstituteDependencies('..'					, 'obp2-utils-fx'	)
+// includeBuildAndSubstituteDependencies('../obp2-core-ui'		, 'obp2-GUI'		)
+
 
 // GPSL PROPERTY LANGUAGE
 includeBuildAndSubstituteDependencies('../jicpl'			, 'LPropositionalLogic'		)
